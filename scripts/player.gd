@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 300
+var speed = 200
 var jumpSpeed = -speed * 2
 var gravity = speed * 3
 
@@ -24,7 +24,7 @@ func update_animation():
 		$AnimatedSprite2D.flip_h = false
 	
 func get_input():
-	if Input.is_action_just_pressed("jump") && is_on_floor():
+	if Input.is_action_just_pressed("jump"):
 		velocity.y = jumpSpeed
 	
 	var direction = Input.get_axis("left", "right")
