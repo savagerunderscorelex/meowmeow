@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://blhn32kabocew"]
+
+[ext_resource type="Script" uid="uid://cjrnsmu40p3" path="res://scripts/platform.gd" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(219, 339)
+
+[node name="platform" type="Node2D"]
+script = ExtResource("1_ba0x2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(215.5, 356)
+shape = SubResource("RectangleShape2D_nlgqw")
+debug_color = Color(1.9853935e-07, 0.1697118, 0.20469168, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 107.0
+offset_top = 186.0
+offset_right = 325.0
+offset_bottom = 529.0
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)

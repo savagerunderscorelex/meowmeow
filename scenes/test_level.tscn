@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfwqw5i0pknfw"]
+
+[ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="1_2venv"]
+[ext_resource type="Script" uid="uid://cb84ewg3eabla" path="res://scripts/test_level.gd" id="1_j6w7d"]
+[ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="3_x4b8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paw1w"]
+size = Vector2(154, 339)
+
+[node name="test level" type="Node2D"]
+script = ExtResource("1_j6w7d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(207, 350)
+shape = SubResource("RectangleShape2D_paw1w")
+debug_color = Color(1.9853935e-07, 0.1697118, 0.20469168, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 129.0
+offset_top = 170.0
+offset_right = 387.0
+offset_bottom = 513.0
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_2venv")]
+position = Vector2(140, 53)
+scale = Vector2(3, 3)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="platform" parent="." instance=ExtResource("3_x4b8f")]
+position = Vector2(465, -11)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
