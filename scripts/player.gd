@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+# This is the player node, which is a cat. The cat operates like
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
