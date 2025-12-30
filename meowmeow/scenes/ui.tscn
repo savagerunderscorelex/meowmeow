@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcgp7sie67b0t"]
+
+[ext_resource type="Script" uid="uid://voi2v63jl5em" path="res://scripts/control.gd" id="1_5p55f"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_5p55f")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 349.0
+offset_top = 224.0
+offset_right = 422.0
+offset_bottom = 255.0
+scale = Vector2(6.75718, 5.5094924)
+disabled = true
+text = "you dies"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

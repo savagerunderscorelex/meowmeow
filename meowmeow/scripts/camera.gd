@@ -1,6 +1,7 @@
 extends Node2D
 
-var moving
+var speed: int = 1
+var moving: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	moving = true
@@ -10,8 +11,7 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(5).timeout
 		moving = false
 	else: 
-		self.position.x += 1
-
+		self.position.x += speed
 
 func _on_death_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

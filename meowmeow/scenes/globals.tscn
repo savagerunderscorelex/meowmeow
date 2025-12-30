@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpotwjm07pkla"]
+
+[ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="1_30owm"]
+
+[node name="speed_values" type="Node"]
+script = ExtResource("1_30owm")

@@ -1,17 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://dochlt51xp7s7"]
+[gd_scene load_steps=10 format=3 uid="uid://dochlt51xp7s7"]
 
 [ext_resource type="Script" uid="uid://17nfmn4ujtw3" path="res://scripts/test_level_phase_two.gd" id="1_e6eeq"]
+[ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="2_csxgm"]
 [ext_resource type="Texture2D" uid="uid://dlaq3f3hiu07f" path="res://images/godotwaka.png" id="2_escey"]
-[ext_resource type="PackedScene" uid="uid://dcgp7sie67b0t" path="res://scenes/control.tscn" id="3_csxgm"]
+[ext_resource type="PackedScene" uid="uid://dcgp7sie67b0t" path="res://scenes/ui.tscn" id="3_csxgm"]
 [ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="3_qq6au"]
 [ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="4_csxgm"]
 [ext_resource type="PackedScene" uid="uid://cgfk60fyq3y8t" path="res://scenes/camera.tscn" id="5_escey"]
+
+[sub_resource type="Resource" id="Resource_xmgrc"]
+script = ExtResource("2_csxgm")
+playerSpeed = 150
+cameraSpeed = 2
+spawnInterval = 0.1
+metadata/_custom_type_script = "uid://cyw1so6o24r13"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6eeq"]
 size = Vector2(262, 339)
 
 [node name="test_level_phase_two" type="Node2D"]
 script = ExtResource("1_e6eeq")
+speeds = SubResource("Resource_xmgrc")
 
 [node name="Control" parent="." instance=ExtResource("3_csxgm")]
 
@@ -19,23 +28,17 @@ script = ExtResource("1_e6eeq")
 position = Vector2(609, 191)
 texture = ExtResource("2_escey")
 
-[node name="platform" parent="." instance=ExtResource("3_qq6au")]
-position = Vector2(-710, 157)
-
 [node name="Player" parent="." instance=ExtResource("4_csxgm")]
 scale = Vector2(3, 3)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(577, 327)
-enabled = false
-
 [node name="camera" parent="." instance=ExtResource("5_escey")]
 position = Vector2(575, 327)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(-101, -25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -49,6 +52,9 @@ offset_top = 176.0
 offset_right = 398.0
 offset_bottom = 519.0
 color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+
+[node name="platform" parent="." instance=ExtResource("3_qq6au")]
+position = Vector2(-89, -38)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
