@@ -12,7 +12,7 @@
 script = ExtResource("2_csxgm")
 playerSpeed = 150
 cameraSpeed = 2
-spawnInterval = 0.1
+spawnInterval = 0.01
 metadata/_custom_type_script = "uid://cyw1so6o24r13"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6eeq"]
@@ -23,6 +23,10 @@ script = ExtResource("1_e6eeq")
 speeds = SubResource("Resource_xmgrc")
 
 [node name="Control" parent="." instance=ExtResource("3_csxgm")]
+
+[node name="Button2" type="Button" parent="Control"]
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Godotwaka" type="Sprite2D" parent="."]
 position = Vector2(609, 191)
@@ -36,6 +40,16 @@ autostart = true
 
 [node name="camera" parent="." instance=ExtResource("5_escey")]
 position = Vector2(575, 327)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 683.0
+offset_top = 24.0
+offset_right = 723.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 60
+text = "0"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
