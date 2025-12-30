@@ -14,7 +14,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	get_input()
 	update_movement(delta)
-	update_speed()
 	update_animation()
 	update_flipping()
 	move_and_slide()
@@ -35,11 +34,6 @@ func update_flipping():
 	elif velocity.x > 0:
 		animator.flip_h = false
 
-func update_speed():
-	if velocity.x > 0:
-		speed = 350
-	else:
-		speed = 200	
 func get_input():
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jumpSpeed

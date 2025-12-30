@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgfk60fyq3y8t"]
+
+[ext_resource type="Script" uid="uid://bf1706gkomt8w" path="res://scripts/camera.gd" id="1_cvpoc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cvpoc"]
+
+[node name="camera" type="Camera2D"]
+script = ExtResource("1_cvpoc")
+
+[node name="DeathArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea"]
+position = Vector2(-577, 17)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_cvpoc")
+
+[connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]
