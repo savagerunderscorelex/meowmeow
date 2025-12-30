@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
+@onready var animator: AnimatedSprite2D = $AnimatedSprite2D
+
 var speed = 200
 var jumpSpeed = -speed * 2
 var gravity = speed * 3
-
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,16 +14,32 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	get_input()
 	update_movement(delta)
+	update_speed()
 	update_animation()
+	update_flipping()
 	move_and_slide()
 
 func update_animation():
+	if is_on_floor():
+		if velocity.x != 0:
+			animator.play("walking")
+		elif velocity.x == 0:
+			animator.play("idle")
+	else:
+		if velocity.y < 0:
+			animator.play("jump")
+			
+func update_flipping():
 	if velocity.x < 0:
-		$AnimatedSprite2D.play("jump")
-		$AnimatedSprite2D.flip_h = true
+		animator.flip_h = true
 	elif velocity.x > 0:
-		$AnimatedSprite2D.flip_h = false
-	
+		animator.flip_h = false
+
+func update_speed():
+	if velocity.x > 0:
+		speed = 350
+	else:
+		speed = 200	
 func get_input():
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jumpSpeed

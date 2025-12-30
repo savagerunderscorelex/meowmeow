@@ -5,17 +5,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
 size = Vector2(219, 339)
 
-[node name="platform" type="Node2D"]
+[node name="platform" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_ba0x2")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(215.5, 356)
 shape = SubResource("RectangleShape2D_nlgqw")
 debug_color = Color(1.9853935e-07, 0.1697118, 0.20469168, 0.41960785)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 108.0
 offset_top = 186.0
 offset_right = 326.0
