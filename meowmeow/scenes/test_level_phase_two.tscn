@@ -39,6 +39,10 @@ scale = Vector2(3, 3)
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [node name="camera" parent="." instance=ExtResource("5_escey")]
 position = Vector2(575, 327)
 

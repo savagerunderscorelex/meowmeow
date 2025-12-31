@@ -12,6 +12,10 @@ var instances: int
 func _ready() -> void:
 	globals.score = 0
 	$AudioStreamPlayer.stream.loop = true
+	speeds.spawnInterval = 0.01
+	speeds.cameraSpeed = 2
+	speeds.playerSpeed = 150
+	$Timer2.add_to_group("Timer")
 	
 func _process(_delta: float) -> void:
 	scoreLabel.text = "%s" %[str(globals.score)]
@@ -29,9 +33,8 @@ func _on_timer_timeout() -> void:
 	add_child(groundsInstance)
 	instances += 1
 	
-	
 	match instances:
-		10:
+		50:
 			speeds.spawnInterval = 0.5
 			print("too much")
 		50:
@@ -41,9 +44,12 @@ func _on_timer_timeout() -> void:
 
 func check_score():
 	match globals.score:
-		20:
+		25:
 			speeds.playerSpeed = 200
 			speeds.cameraSpeed = 3
-		30:
+		50:
 			speeds.playerSpeed = 250
 			speeds.cameraSpeed = 4
+		75:
+			speeds.playerSpeed = 300
+			speeds.cameraSpeed = 5.5

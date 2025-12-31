@@ -17,5 +17,6 @@ func _on_death_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		get_tree().paused = true
 	elif body.name == "Platform":
+		await get_tree().create_timer(1).timeout
 		print("you've been removed")
 		get_tree().queue_delete(body.get_parent())
