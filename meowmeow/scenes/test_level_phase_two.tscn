@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dochlt51xp7s7"]
+[gd_scene load_steps=11 format=3 uid="uid://dochlt51xp7s7"]
 
 [ext_resource type="Script" uid="uid://17nfmn4ujtw3" path="res://scripts/test_level_phase_two.gd" id="1_e6eeq"]
 [ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="2_csxgm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="3_qq6au"]
 [ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="4_csxgm"]
 [ext_resource type="PackedScene" uid="uid://cgfk60fyq3y8t" path="res://scenes/camera.tscn" id="5_escey"]
+[ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="8_xmgrc"]
 
 [sub_resource type="Resource" id="Resource_xmgrc"]
 script = ExtResource("2_csxgm")
@@ -50,6 +51,10 @@ offset_right = 723.0
 offset_bottom = 107.0
 theme_override_font_sizes/font_size = 60
 text = "0"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xmgrc")
+autoplay = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false

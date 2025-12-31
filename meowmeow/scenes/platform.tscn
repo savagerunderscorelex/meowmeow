@@ -13,14 +13,14 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ba0x2")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Platform" type="CharacterBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(215.5, 356)
 shape = SubResource("RectangleShape2D_nlgqw")
 debug_color = Color(1.9853935e-07, 0.1697118, 0.20469168, 0.41960785)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Platform"]
 offset_left = 108.0
 offset_top = 186.0
 offset_right = 326.0
@@ -30,7 +30,7 @@ color = Color(0.19793725, 0.19793722, 0.19793722, 1)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(338, -98)
+position = Vector2(143, -71)
 shape = SubResource("SegmentShape2D_ba0x2")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
