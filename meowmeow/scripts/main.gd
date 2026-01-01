@@ -48,8 +48,8 @@ func check_score():
 			speeds.playerSpeed = 200
 			speeds.cameraSpeed = 3
 		50:
-			speeds.playerSpeed = 250
+			speeds.playerSpeed = 270
 			speeds.cameraSpeed = 4
 		75:
-			speeds.playerSpeed = 300
+			speeds.playerSpeed = 350
 			speeds.cameraSpeed = 5.5

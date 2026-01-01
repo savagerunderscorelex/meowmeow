@@ -1,16 +1,16 @@
 [gd_scene load_steps=11 format=3 uid="uid://dochlt51xp7s7"]
 
-[ext_resource type="Script" uid="uid://17nfmn4ujtw3" path="res://scripts/test_level_phase_two.gd" id="1_e6eeq"]
-[ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="2_csxgm"]
-[ext_resource type="Texture2D" uid="uid://dlaq3f3hiu07f" path="res://images/godotwaka.png" id="2_escey"]
-[ext_resource type="PackedScene" uid="uid://dcgp7sie67b0t" path="res://scenes/ui.tscn" id="3_csxgm"]
-[ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="3_qq6au"]
-[ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="4_csxgm"]
-[ext_resource type="PackedScene" uid="uid://cgfk60fyq3y8t" path="res://scenes/camera.tscn" id="5_escey"]
-[ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="8_xmgrc"]
+[ext_resource type="Script" uid="uid://17nfmn4ujtw3" path="res://scripts/main.gd" id="1_tipki"]
+[ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="2_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dcgp7sie67b0t" path="res://scenes/ui.tscn" id="3_choun"]
+[ext_resource type="Texture2D" uid="uid://dlaq3f3hiu07f" path="res://images/godotwaka.png" id="4_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="5_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://cgfk60fyq3y8t" path="res://scenes/camera.tscn" id="6_trceg"]
+[ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="7_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="8_jkv2x"]
 
 [sub_resource type="Resource" id="Resource_xmgrc"]
-script = ExtResource("2_csxgm")
+script = ExtResource("2_85g3d")
 playerSpeed = 150
 cameraSpeed = 2
 spawnInterval = 0.01
@@ -19,11 +19,11 @@ metadata/_custom_type_script = "uid://cyw1so6o24r13"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6eeq"]
 size = Vector2(262, 339)
 
-[node name="test_level_phase_two" type="Node2D"]
-script = ExtResource("1_e6eeq")
+[node name="main" type="Node2D"]
+script = ExtResource("1_tipki")
 speeds = SubResource("Resource_xmgrc")
 
-[node name="Control" parent="." instance=ExtResource("3_csxgm")]
+[node name="Control" parent="." instance=ExtResource("3_choun")]
 
 [node name="Button2" type="Button" parent="Control"]
 offset_right = 8.0
@@ -31,9 +31,9 @@ offset_bottom = 8.0
 
 [node name="Godotwaka" type="Sprite2D" parent="."]
 position = Vector2(609, 191)
-texture = ExtResource("2_escey")
+texture = ExtResource("4_ya4ey")
 
-[node name="Player" parent="." instance=ExtResource("4_csxgm")]
+[node name="Player" parent="." instance=ExtResource("5_eb6dy")]
 scale = Vector2(3, 3)
 
 [node name="Timer" type="Timer" parent="."]
@@ -43,7 +43,7 @@ autostart = true
 wait_time = 3.0
 one_shot = true
 
-[node name="camera" parent="." instance=ExtResource("5_escey")]
+[node name="camera" parent="." instance=ExtResource("6_trceg")]
 position = Vector2(575, 327)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -57,7 +57,7 @@ theme_override_font_sizes/font_size = 60
 text = "0"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_xmgrc")
+stream = ExtResource("7_a8y0u")
 autoplay = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -76,7 +76,7 @@ offset_right = 398.0
 offset_bottom = 519.0
 color = Color(0.19793725, 0.19793722, 0.19793722, 1)
 
-[node name="platform" parent="." instance=ExtResource("3_qq6au")]
+[node name="platform" parent="." instance=ExtResource("8_jkv2x")]
 position = Vector2(-89, -38)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
