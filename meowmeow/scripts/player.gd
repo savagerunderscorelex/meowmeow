@@ -7,11 +7,13 @@ var jumpSpeed: int = -speed * 2
 var gravity: int = speed * 3
 var jumps: int = 2
 
+
 func _physics_process(delta: float) -> void:
-	get_input()
+	if globals.is_countdown_finished:
+		get_input()
+		update_animation()
+		update_flipping()
 	update_movement(delta)
-	update_animation()
-	update_flipping()
 	move_and_slide()
 	
 func update_animation(): # updates player animation

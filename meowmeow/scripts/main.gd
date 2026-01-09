@@ -9,13 +9,21 @@ var instances: int
 
 @export var speeds: SpeedValues
 
+
 func _ready() -> void:
-	globals.score = 0
 	$AudioStreamPlayer.stream.loop = true
+	reset_stats()
+	default_speeds()
+
+	
+func reset_stats():
+	globals.score = 0
+	globals.is_countdown_finished = false
+	
+func default_speeds():
 	speeds.spawnInterval = 0.01
 	speeds.cameraSpeed = 2
 	speeds.playerSpeed = 150
-	$Timer2.add_to_group("Timer")
 	
 func _process(_delta: float) -> void:
 	scoreLabel.text = "%s" %[str(globals.score)]
@@ -37,7 +45,7 @@ func _on_timer_timeout() -> void:
 		50:
 			speeds.spawnInterval = 0.5
 			print("too much")
-		50:
+		75:
 			speeds.spawnInterval = 2
 	
 	$Timer.start()
@@ -51,5 +59,5 @@ func check_score():
 			speeds.playerSpeed = 270
 			speeds.cameraSpeed = 4
 		75:
-			speeds.playerSpeed = 350
+			speeds.playerSpeed = 325
 			speeds.cameraSpeed = 5.5

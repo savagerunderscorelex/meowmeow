@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if moving == true:
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(5).timeout
 		moving = false
 	else: 
 		self.position.x += speed
