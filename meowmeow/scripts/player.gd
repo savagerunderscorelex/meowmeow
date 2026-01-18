@@ -13,7 +13,8 @@ func _physics_process(delta: float) -> void:
 		get_input()
 		update_animation()
 		update_flipping()
-	update_movement(delta)
+		update_movement(delta)
+	# enter_screen_animation()
 	move_and_slide()
 	
 func update_animation(): # updates player animation
@@ -46,3 +47,9 @@ func get_input():
 
 func update_movement(delta: float) -> void: # Force of gravity
 	velocity.y += gravity * delta
+
+func enter_screen_animation():
+	animator.play("idle")
+	await get_tree().create_timer(5).timeout
+	animator.play("idle_background")
+	await get_tree().create_timer(5).timeout

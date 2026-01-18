@@ -9,7 +9,6 @@ var instances: int
 
 @export var speeds: SpeedValues
 
-
 func _ready() -> void:
 	$AudioStreamPlayer.stream.loop = true
 	reset_stats()
@@ -31,6 +30,7 @@ func _process(_delta: float) -> void:
 	$Player.speed = speeds.playerSpeed
 	camera.speed = speeds.cameraSpeed
 	$Timer.wait_time = speeds.spawnInterval
+	
 
 	
 func _on_timer_timeout() -> void:

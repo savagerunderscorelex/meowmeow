@@ -4,12 +4,12 @@ var speed: int = 1
 var moving: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	moving = true
+	moving = false
 
 func _process(_delta: float) -> void:
-	if moving == true:
+	if moving == false:
 		await get_tree().create_timer(5).timeout
-		moving = false
+		moving = true
 	else: 
 		self.position.x += speed
 

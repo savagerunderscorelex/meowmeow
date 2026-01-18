@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dochlt51xp7s7"]
+[gd_scene load_steps=13 format=3 uid="uid://dochlt51xp7s7"]
 
 [ext_resource type="Script" uid="uid://17nfmn4ujtw3" path="res://scripts/main.gd" id="1_tipki"]
 [ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="2_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dcgp7sie67b0t" path="res://scenes/death_ui.tscn" id="3_choun"]
 [ext_resource type="Texture2D" uid="uid://dlaq3f3hiu07f" path="res://images/godotwaka.png" id="4_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="5_eb6dy"]
+[ext_resource type="Script" uid="uid://dx886r2282ubm" path="res://scripts/background.gd" id="6_choun"]
 [ext_resource type="PackedScene" uid="uid://cgfk60fyq3y8t" path="res://scenes/camera.tscn" id="6_trceg"]
 [ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="8_jkv2x"]
@@ -24,17 +25,18 @@ size = Vector2(262, 339)
 script = ExtResource("1_tipki")
 speeds = SubResource("Resource_xmgrc")
 
-[node name="CountDown" parent="." instance=ExtResource("9_85g3d")]
-
 [node name="Control" parent="." instance=ExtResource("3_choun")]
 
 [node name="Button2" type="Button" parent="Control"]
 offset_right = 8.0
 offset_bottom = 8.0
 
+[node name="CountDown" parent="." instance=ExtResource("9_85g3d")]
+
 [node name="Godotwaka" type="Sprite2D" parent="."]
 position = Vector2(609, 191)
 texture = ExtResource("4_ya4ey")
+script = ExtResource("6_choun")
 
 [node name="Player" parent="." instance=ExtResource("5_eb6dy")]
 scale = Vector2(3, 3)

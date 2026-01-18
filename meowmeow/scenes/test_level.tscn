@@ -16,7 +16,7 @@ position = Vector2(56, 32)
 texture = ExtResource("2_x4b8f")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-329, -138)
+position = Vector2(-46, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(261, 350)
@@ -31,7 +31,7 @@ offset_bottom = 519.0
 color = Color(0.19793725, 0.19793722, 0.19793722, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_2venv")]
-position = Vector2(-174, -66)
+position = Vector2(158, 69)
 scale = Vector2(3, 3)
 
 [node name="Timer" type="Timer" parent="."]
