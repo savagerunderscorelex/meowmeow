@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dochlt51xp7s7"]
+[gd_scene load_steps=14 format=3 uid="uid://dochlt51xp7s7"]
 
 [ext_resource type="Script" uid="uid://17nfmn4ujtw3" path="res://scripts/main.gd" id="1_tipki"]
 [ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="2_85g3d"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cgfk60fyq3y8t" path="res://scenes/camera.tscn" id="6_trceg"]
 [ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="7_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="8_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://ds6l7av67yr2i" path="res://scenes/background.tscn" id="8_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://cfbcal8wfftm4" path="res://scenes/count_down.tscn" id="9_85g3d"]
 
 [sub_resource type="Resource" id="Resource_xmgrc"]
@@ -47,20 +48,26 @@ autostart = true
 [node name="camera" parent="." instance=ExtResource("6_trceg")]
 position = Vector2(575, 327)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
+[node name="ScoreLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 683.0
-offset_top = 24.0
-offset_right = 723.0
-offset_bottom = 107.0
+[node name="Score" type="Label" parent="ScoreLayer"]
+offset_left = 1068.0
+offset_top = 30.0
+offset_right = 1108.0
+offset_bottom = 113.0
 theme_override_font_sizes/font_size = 60
 text = "0"
+
+[node name="ScoreLabel" type="Label" parent="ScoreLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_a8y0u")
 autoplay = true
+
+[node name="Background" parent="." instance=ExtResource("8_ya4ey")]
+position = Vector2(271.99988, 133)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false

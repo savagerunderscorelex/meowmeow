@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds6l7av67yr2i"]
+
+[ext_resource type="Script" uid="uid://b2nkamr77gwbc" path="res://scripts/background-parallax.gd" id="1_wax1t"]
+[ext_resource type="Texture2D" uid="uid://c3w7audcsypqh" path="res://assets/forest_sky.png" id="1_wisxt"]
+[ext_resource type="Texture2D" uid="uid://b3dxhjo0wdbsa" path="res://assets/forest_mountain.png" id="2_wax1t"]
+[ext_resource type="Texture2D" uid="uid://loirjd5dj41r" path="res://assets/forest_back.png" id="3_1tmhi"]
+[ext_resource type="Texture2D" uid="uid://cq6ke55l6ddpv" path="res://assets/forest_mid.png" id="4_l5f8m"]
+[ext_resource type="Texture2D" uid="uid://b5sdpls1r2yss" path="res://assets/forest_long.png" id="5_6vm3t"]
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_wax1t")
+
+[node name="ForestSky" type="Sprite2D" parent="."]
+position = Vector2(947, 415)
+texture = ExtResource("1_wisxt")
+
+[node name="ForestMountain" type="Sprite2D" parent="."]
+position = Vector2(946, 382)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wax1t")
+
+[node name="ForestBack" type="Sprite2D" parent="."]
+position = Vector2(950, 306)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_1tmhi")
+
+[node name="ForestMid" type="Sprite2D" parent="."]
+position = Vector2(945, 234)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_l5f8m")
+
+[node name="ForestLong" type="Sprite2D" parent="."]
+position = Vector2(950, 348)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_6vm3t")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

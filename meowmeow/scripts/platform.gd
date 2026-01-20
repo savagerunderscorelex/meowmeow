@@ -3,6 +3,9 @@ extends Node2D
 var speed: int = 150
 var enter: int = 0
 
+func _ready() -> void:
+	self.add_to_group("Platforms")
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		enter += 1

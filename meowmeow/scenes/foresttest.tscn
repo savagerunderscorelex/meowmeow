@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://mqfqmmiswin"]
+
+[ext_resource type="Texture2D" uid="uid://b5sdpls1r2yss" path="res://assets/forest_long.png" id="1_mg85s"]
+
+[node name="Foresttest" type="Node2D"]
+
+[node name="ForestLong" type="Sprite2D" parent="."]
+position = Vector2(2027, 613)
+texture = ExtResource("1_mg85s")

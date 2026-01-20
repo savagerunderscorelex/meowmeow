@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var camera: Camera2D = $camera
-@onready var scoreLabel: Label = $CanvasLayer/Label
+@onready var scoreLabel: Label = $ScoreLayer/Score
 
 var moving: bool = false
 var grounds: PackedScene = preload("res://scenes/platform.tscn")
@@ -10,7 +10,6 @@ var instances: int
 @export var speeds: SpeedValues
 
 func _ready() -> void:
-
 	$AudioStreamPlayer.stream.loop = true
 	reset_stats()
 	default_speeds()
@@ -28,7 +27,7 @@ func default_speeds():
 	
 func _process(_delta: float) -> void:
 	if globals.is_countdown_finished:
-		$CanvasLayer.visible = true
+		$ScoreLayer.visible = true
 	scoreLabel.text = "%s" %[str(globals.score)]
 	check_score()
 	$Player.speed = speeds.playerSpeed
@@ -39,7 +38,7 @@ func _process(_delta: float) -> void:
 	
 func _on_timer_timeout() -> void:
 	var groundsInstance = grounds.instantiate() # Creates new instance of the platforms
-	var previousInstance = self.get_child(self.get_child_count()-1) # Initial reference platform to determine distance between instances (is the starting platform the player spawns on, which is the last child in the scene)
+	var previousInstance = get_tree().get_nodes_in_group("Platforms").back() # Initial reference platform to determine distance between instances (is the starting platform the player spawns on, which is the last child in the scene)
 	groundsInstance.position.x = previousInstance.position.x + randi_range(275,500)
 	groundsInstance.position.y = randi_range(100, 300)
 	add_child(groundsInstance)
