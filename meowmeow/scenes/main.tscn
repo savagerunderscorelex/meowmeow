@@ -35,18 +35,22 @@ offset_bottom = 8.0
 [node name="CountDown" parent="." instance=ExtResource("9_85g3d")]
 
 [node name="Godotwaka" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(609, 191)
 texture = ExtResource("4_ya4ey")
 script = ExtResource("6_choun")
 
-[node name="Player" parent="." instance=ExtResource("5_eb6dy")]
-scale = Vector2(3, 3)
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
+[node name="Background" parent="." instance=ExtResource("8_ya4ey")]
+position = Vector2(-18, 16)
 
 [node name="camera" parent="." instance=ExtResource("6_trceg")]
 position = Vector2(575, 327)
+
+[node name="Player" parent="." instance=ExtResource("5_eb6dy")]
+scale = Vector2(3, 3)
+
+[node name="Timer1" type="Timer" parent="."]
+autostart = true
 
 [node name="ScoreLayer" type="CanvasLayer" parent="."]
 
@@ -65,9 +69,6 @@ offset_bottom = 23.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_a8y0u")
 autoplay = true
-
-[node name="Background" parent="." instance=ExtResource("8_ya4ey")]
-position = Vector2(271.99988, 133)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -88,4 +89,4 @@ color = Color(0.19793725, 0.19793722, 0.19793722, 1)
 [node name="platform" parent="." instance=ExtResource("8_jkv2x")]
 position = Vector2(-89, -38)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]

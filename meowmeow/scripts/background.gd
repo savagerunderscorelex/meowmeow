@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	speed = get_parent().speeds.cameraSpeed
-	if get_parent().get_child(5).moving == false:
+	if get_parent().get_child(4).moving == false:
 		await get_tree().create_timer(5).timeout
 	else: 
 		self.position.x += speed

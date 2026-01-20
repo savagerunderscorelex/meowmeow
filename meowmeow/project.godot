@@ -32,6 +32,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 Timer=""
 Trees=""
+Backgrounds=""
+Platforms=""
 
 [input]
 

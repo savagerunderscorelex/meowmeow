@@ -3,9 +3,12 @@ extends Node2D
 @onready var camera: Camera2D = $camera
 @onready var scoreLabel: Label = $ScoreLayer/Score
 
-var moving: bool = false
 var grounds: PackedScene = preload("res://scenes/platform.tscn")
-var instances: int
+var background: PackedScene = preload("res://scenes/background.tscn")
+
+var moving: bool = false
+var platformInstances: int
+var backgroundInstance: int
 
 @export var speeds: SpeedValues
 
@@ -13,10 +16,8 @@ func _ready() -> void:
 	$AudioStreamPlayer.stream.loop = true
 	reset_stats()
 	default_speeds()
-
 	
 func reset_stats():
-	
 	globals.score = 0
 	globals.is_countdown_finished = false
 	
@@ -32,19 +33,19 @@ func _process(_delta: float) -> void:
 	check_score()
 	$Player.speed = speeds.playerSpeed
 	camera.speed = speeds.cameraSpeed
-	$Timer.wait_time = speeds.spawnInterval
-	
-
+	$Timer1.wait_time = speeds.spawnInterval
 	
 func _on_timer_timeout() -> void:
 	var groundsInstance = grounds.instantiate() # Creates new instance of the platforms
-	var previousInstance = get_tree().get_nodes_in_group("Platforms").back() # Initial reference platform to determine distance between instances (is the starting platform the player spawns on, which is the last child in the scene)
+	# References the last node in the group platforms (compare to referencing the last node in the tree,
+	# which came with a lot of errors...)
+	var previousInstance = get_tree().get_nodes_in_group("Platforms").back()
 	groundsInstance.position.x = previousInstance.position.x + randi_range(275,500)
 	groundsInstance.position.y = randi_range(100, 300)
 	add_child(groundsInstance)
-	instances += 1
+	platformInstances += 1
 	
-	match instances:
+	match platformInstances:
 		50:
 			speeds.spawnInterval = 0.5
 			print("too much")
@@ -52,7 +53,7 @@ func _on_timer_timeout() -> void:
 			speeds.spawnInterval = 2
 			print(75)
 	
-	$Timer.start()
+	$Timer1.start()
 
 func check_score():
 	match globals.score:
