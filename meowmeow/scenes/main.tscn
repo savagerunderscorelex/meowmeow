@@ -48,6 +48,7 @@ autostart = true
 position = Vector2(575, 327)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 683.0

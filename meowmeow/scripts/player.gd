@@ -14,7 +14,6 @@ func _physics_process(delta: float) -> void:
 		update_animation()
 		update_flipping()
 		update_movement(delta)
-	# enter_screen_animation()
 	move_and_slide()
 	
 func update_animation(): # updates player animation
