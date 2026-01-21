@@ -1,6 +1,5 @@
 extends Node2D
-@onready var trees: Sprite2D = $ForestLong
 
-# Called when the node enters the scene tree for the first time.
+# The background for this game uses parallax nodes to make different layers of
 func _ready() -> void:
 	self.add_to_group("Backgrounds")

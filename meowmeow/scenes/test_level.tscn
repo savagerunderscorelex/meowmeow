@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfwqw5i0pknfw"]
+[gd_scene load_steps=7 format=3 uid="uid://dfwqw5i0pknfw"]
 
 [ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="1_2venv"]
 [ext_resource type="Script" uid="uid://cb84ewg3eabla" path="res://scripts/test_level.gd" id="1_j6w7d"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="3_x4b8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_paw1w"]
+size = Vector2(262, 339)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4b8f"]
 size = Vector2(262, 339)
 
 [node name="test level" type="Node2D"]
@@ -40,5 +43,20 @@ autostart = true
 
 [node name="platform" parent="." instance=ExtResource("3_x4b8f")]
 position = Vector2(465, -11)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-101, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(261, 350)
+shape = SubResource("RectangleShape2D_x4b8f")
+debug_color = Color(1.9853935e-07, 0.1697118, 0.20469168, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = 132.0
+offset_top = 176.0
+offset_right = 398.0
+offset_bottom = 519.0
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

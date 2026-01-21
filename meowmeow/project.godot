@@ -21,7 +21,7 @@ globals="*res://scenes/globals.tscn"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [editor_plugins]
@@ -34,6 +34,18 @@ Timer=""
 Trees=""
 Backgrounds=""
 Platforms=""
+
+[importer_defaults]
+
+font_data_image={
+&"compress": false
+}
+font_data_dynamic={
+&"compress": false
+}
+font_data_bmfont={
+&"compress": false
+}
 
 [input]
 

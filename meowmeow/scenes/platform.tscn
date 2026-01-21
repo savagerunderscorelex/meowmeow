@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://cjrnsmu40p3" path="res://scripts/platform.gd" id="1_ba0x2"]
 [ext_resource type="Texture2D" uid="uid://ela5ml6olgkp" path="res://assets/Free Tileset.png" id="2_nlgqw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
-size = Vector2(217, 371.5)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_507ja"]
 texture = ExtResource("2_nlgqw")
 6:2/0 = 0
@@ -91,6 +88,9 @@ texture = ExtResource("2_nlgqw")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_507ja")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(217, 371.5)
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ba0x2"]
 b = Vector2(1, 335)
 
@@ -101,17 +101,18 @@ script = ExtResource("1_ba0x2")
 
 [node name="Platform" type="CharacterBody2D" parent="."]
 
+[node name="TileMapLayer" type="TileMapLayer" parent="Platform"]
+scale = Vector2(3.3546894, 2.9141967)
+tile_map_data = PackedByteArray("AAACAAQAAQAGAAIAAAADAAQAAQAHAAIAAAAEAAQAAQAIAAIAAAAFAAQAAQAJAAIAAAACAAUAAQAGAAMAAAADAAUAAQAHAAMAAAAEAAUAAQAIAAMAAAAFAAUAAQAJAAMAAAACAAYAAQAGAAMAAAADAAYAAQAHAAMAAAAEAAYAAQAHAAMAAAAFAAYAAQAJAAMAAAACAAcAAQAGAAMAAAADAAcAAQAHAAMAAAAEAAcAAQAHAAMAAAAFAAcAAQAJAAMAAAACAAgAAQAGAAMAAAADAAgAAQAHAAMAAAAEAAgAAQAHAAMAAAAFAAgAAQAJAAMAAAACAAkAAQAGAAMAAAADAAkAAQAHAAMAAAAEAAkAAQAHAAMAAAAFAAkAAQAJAAMAAAACAAoAAQAGAAMAAAADAAoAAQAHAAMAAAAEAAoAAQAIAAMAAAAFAAoAAQAJAAMAAAACAAsAAQAGAAUAAAADAAsAAQAHAAUAAAAEAAsAAQAIAAUAAAAFAAsAAQAJAAUAAAA=")
+tile_set = SubResource("TileSet_n1ckp")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(214.5, 372.25)
 shape = SubResource("RectangleShape2D_nlgqw")
 debug_color = Color(1.9853935e-07, 0.1697118, 0.20469168, 0.41960785)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Platform"]
-scale = Vector2(3.3546894, 2.9141967)
-tile_map_data = PackedByteArray("AAACAAQAAQAGAAIAAAADAAQAAQAHAAIAAAAEAAQAAQAIAAIAAAAFAAQAAQAJAAIAAAACAAUAAQAGAAMAAAADAAUAAQAHAAMAAAAEAAUAAQAIAAMAAAAFAAUAAQAJAAMAAAACAAYAAQAGAAMAAAADAAYAAQAHAAMAAAAEAAYAAQAIAAMAAAAFAAYAAQAJAAMAAAACAAcAAQAGAAMAAAADAAcAAQAHAAMAAAAEAAcAAQAEAAQAAAAFAAcAAQAJAAMAAAACAAgAAQAGAAMAAAADAAgAAQAHAAMAAAAEAAgAAQAIAAMAAAAFAAgAAQAJAAMAAAACAAkAAQAGAAMAAAADAAkAAQAEAAQAAAAEAAkAAQAIAAMAAAAFAAkAAQAJAAMAAAACAAoAAQAGAAMAAAADAAoAAQAHAAMAAAAEAAoAAQAIAAMAAAAFAAoAAQAJAAMAAAACAAsAAQAGAAUAAAADAAsAAQAHAAUAAAAEAAsAAQAIAAUAAAAFAAsAAQAJAAUAAAA=")
-tile_set = SubResource("TileSet_n1ckp")
-
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-60, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(143, -71)
