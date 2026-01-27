@@ -16,7 +16,6 @@ var backgroundInstance: int
 
 func _ready() -> void:
 	$AudioStreamPlayer.playing = globals.isMusicOn
-	$AudioStreamPlayer.stream.loop = true
 	globals.player_died.connect(on_player_death) # Third step, connect the signal to a function (the parameter in the parentheses is the name of the function defined at the bottom of the script
 	reset_stats()
 	default_speeds()
@@ -27,6 +26,9 @@ func _process(_delta: float) -> void:
 	update_all_scores()
 	check_score()
 	update_speeds()
+	
+	if get_tree().paused == true:
+		print("hey")
 	
 func reset_stats():
 	globals.score = 0
@@ -57,6 +59,8 @@ func check_score():
 		50:
 			speeds.playerSpeed = 325
 			speeds.cameraSpeed = 5.5
+		75:
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/congratulations.tscn")
 
 func _on_timer_timeout() -> void:
 	var groundsInstance = grounds.instantiate() # Creates new instance of the platforms
@@ -82,10 +86,11 @@ func on_player_death(): # Fourth step, define the function that will run once th
 	if $Player.isDead == true:
 		match globals.gameMode:
 			1:
-				if globals.score == 75:
-					pass # go to congrats scene
+				if globals.score >= 75:
+					get_tree().call_deferred("change_scene_to_file", "res://scenes/congratulations.tscn")
 			2:
 				if globals.score > globals.highScoreEndless:
 					globals.highScoreEndless = globals.score
+					
 	await get_tree().create_timer(2).timeout
 	get_tree().paused = true

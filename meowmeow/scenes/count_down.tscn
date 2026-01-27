@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfbcal8wfftm4"]
+[gd_scene format=3 uid="uid://cfbcal8wfftm4"]
 
 [ext_resource type="Script" uid="uid://8mqmgm3y542t" path="res://scripts/count_down.gd" id="1_2nt72"]
+[ext_resource type="FontFile" uid="uid://b7ibineb56ra8" path="res://fonts/game_over.ttf" id="2_34mrw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nt72"]
 bg_color = Color(0.4075378, 0.61820316, 0.8344248, 1)
@@ -90,20 +91,18 @@ _data = {
 &"number": SubResource("Animation_34mrw")
 }
 
-[node name="CountDown" type="CanvasLayer"]
+[node name="CountDown" type="CanvasLayer" unique_id=1063316643]
 script = ExtResource("1_2nt72")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=721644038]
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2nt72")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_v7end")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1205099469]
+libraries/ = SubResource("AnimationLibrary_v7end")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1845968445]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -115,9 +114,9 @@ offset_right = 20.0
 offset_bottom = 41.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 120
+theme_override_constants/outline_size = 26
+theme_override_fonts/font = ExtResource("2_34mrw")
+theme_override_font_sizes/font_size = 360
 text = "3"
-
-[node name="Timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dochlt51xp7s7"]
+[gd_scene format=3 uid="uid://dochlt51xp7s7"]
 
 [ext_resource type="Script" uid="uid://17nfmn4ujtw3" path="res://scripts/main.gd" id="1_tipki"]
 [ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="2_85g3d"]
@@ -19,16 +19,19 @@ cameraSpeed = 2
 spawnInterval = 0.01
 metadata/_custom_type_script = "uid://cyw1so6o24r13"
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" unique_id=923530829]
 script = ExtResource("1_tipki")
 speeds = SubResource("Resource_xmgrc")
 
-[node name="Background" parent="." instance=ExtResource("8_ya4ey")]
+[node name="Background" parent="." unique_id=557172984 instance=ExtResource("8_ya4ey")]
 position = Vector2(-16, 14)
 
-[node name="ScoreLayer" type="CanvasLayer" parent="."]
+[node name="Player" parent="." unique_id=120792118 instance=ExtResource("5_eb6dy")]
+scale = Vector2(3, 3)
 
-[node name="Score" type="Label" parent="ScoreLayer"]
+[node name="ScoreLayer" type="CanvasLayer" parent="." unique_id=339158111]
+
+[node name="Score" type="Label" parent="ScoreLayer" unique_id=1027130537]
 offset_left = 1010.0
 offset_top = -16.0
 offset_right = 1063.0
@@ -38,7 +41,7 @@ theme_override_fonts/font = ExtResource("8_eb6dy")
 theme_override_font_sizes/font_size = 225
 text = "0"
 
-[node name="ScoreLabel" type="Label" parent="ScoreLayer"]
+[node name="ScoreLabel" type="Label" parent="ScoreLayer" unique_id=1054964432]
 offset_left = 665.0
 offset_top = 28.0
 offset_right = 944.0
@@ -49,26 +52,25 @@ theme_override_font_sizes/font_size = 60
 text = "Score:
 "
 
-[node name="Control" parent="." instance=ExtResource("3_choun")]
+[node name="Control" parent="." unique_id=2140100799 instance=ExtResource("3_choun")]
 visible = false
 
-[node name="camera" parent="." instance=ExtResource("6_trceg")]
-position = Vector2(575, 327)
+[node name="camera" parent="." unique_id=1225487441 instance=ExtResource("6_trceg")]
+position = Vector2(524, 322)
 
-[node name="Player" parent="." instance=ExtResource("5_eb6dy")]
-scale = Vector2(3, 3)
-
-[node name="Timer1" type="Timer" parent="."]
+[node name="Timer1" type="Timer" parent="." unique_id=1181988071]
 autostart = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1090941923]
 stream = ExtResource("7_a8y0u")
 autoplay = true
+parameters/looping = true
 
-[node name="platform" parent="." instance=ExtResource("8_jkv2x")]
-position = Vector2(-80, 133)
+[node name="platform" parent="." unique_id=944531724 instance=ExtResource("8_jkv2x")]
+position = Vector2(-113, 125)
 
-[node name="CountDown" parent="." instance=ExtResource("9_85g3d")]
+[node name="CountDown" parent="." unique_id=85468435 instance=ExtResource("9_85g3d")]
+visible = false
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
 

@@ -10,7 +10,7 @@ var isDead: bool = false
 
 # Process
 func _physics_process(delta: float) -> void:
-	if globals.isCountdownFinished:
+	if globals.isCountdownFinished && get_parent().name == "main":
 		# I think that this is a better way of coding platformer movement with GDScript
 		# The tutorial I used to first learn made me put character flipping and horizontal movement logic within
 		# the same function, which made it way harder to code and look right.

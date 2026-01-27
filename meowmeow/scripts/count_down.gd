@@ -2,9 +2,7 @@ extends CanvasLayer
 
 @onready var animator: AnimationPlayer = $AnimationPlayer
 @onready var label: Label = $Label
-@onready var timer: Timer = $Timer
 
-var runs: int = 0
 func _ready() -> void:
 	animator.play("number")
 
