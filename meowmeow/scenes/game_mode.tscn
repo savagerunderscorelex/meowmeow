@@ -110,10 +110,10 @@ script = ExtResource("1_xxbxh")
 position = Vector2(534, -87)
 
 [node name="Player" parent="." instance=ExtResource("3_j6h28")]
-position = Vector2(-67, 209.00002)
 scale = Vector2(6, 6)
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 scale = Vector2(4.8419037, 4.990862)
 tile_set = SubResource("TileSet_pcmjr")
 format = 2
@@ -125,6 +125,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="EndlessButton" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 625.0
 offset_top = 142.0
@@ -139,6 +140,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_11ukb")
 text = "ENDLESS"
 
 [node name="Story Button" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 625.0
 offset_top = 254.0

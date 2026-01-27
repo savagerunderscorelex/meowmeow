@@ -56,7 +56,6 @@ visible = false
 position = Vector2(575, 327)
 
 [node name="Player" parent="." instance=ExtResource("5_eb6dy")]
-position = Vector2(104, 228.00002)
 scale = Vector2(3, 3)
 
 [node name="Timer1" type="Timer" parent="."]

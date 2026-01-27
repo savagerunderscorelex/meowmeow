@@ -1,8 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8p86xsqi05dh"]
+[gd_scene load_steps=14 format=3 uid="uid://b8p86xsqi05dh"]
 
+[ext_resource type="Script" uid="uid://b6p2mb0dp6oc5" path="res://scripts/congratulations.gd" id="1_2qtov"]
 [ext_resource type="PackedScene" uid="uid://ds6l7av67yr2i" path="res://scenes/background.tscn" id="1_l3gy1"]
 [ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="2_dadmm"]
 [ext_resource type="Texture2D" uid="uid://ela5ml6olgkp" path="res://assets/Free Tileset.png" id="3_2qtov"]
+[ext_resource type="FontFile" uid="uid://dotx52c5a1irm" path="res://fonts/Skynight.otf" id="5_adchd"]
+[ext_resource type="FontFile" uid="uid://1g5vimqiitpr" path="res://fonts/Pixelmania.ttf" id="6_j5cxl"]
+[ext_resource type="StyleBox" uid="uid://chud2lgqgl487" path="res://enter.tres" id="7_avxqp"]
+[ext_resource type="StyleBox" uid="uid://x5v1m8kfltrf" path="res://enter-pressed.tres" id="8_b3bs5"]
+[ext_resource type="StyleBox" uid="uid://cix4ogcoy06sk" path="res://enter-hovered.tres" id="9_i0tt5"]
+[ext_resource type="AudioStream" uid="uid://dyrk0e6jj0o84" path="res://sfx_and_music/cheers.mp3" id="10_4yny5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_adchd"]
 texture = ExtResource("3_2qtov")
@@ -89,7 +96,11 @@ texture = ExtResource("3_2qtov")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_adchd")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5cxl"]
+
 [node name="congrats" type="Node2D"]
+script = ExtResource("1_2qtov")
+metadata/_edit_horizontal_guides_ = [130.0]
 
 [node name="Background" parent="." instance=ExtResource("1_l3gy1")]
 position = Vector2(534, -87)
@@ -98,9 +109,52 @@ position = Vector2(534, -87)
 scale = Vector2(6, 6)
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 scale = Vector2(4.8419037, 4.990862)
 tile_set = SubResource("TileSet_vyy7p")
 format = 2
 layer_0/tile_data = PackedInt32Array(327680, 393216, 2, 327681, 458752, 2, 327682, 458752, 2, 327683, 524288, 2, 327684, 458752, 2, 327685, 524288, 2, 327686, 458752, 2, 327687, 524288, 2, 327688, 458752, 2, 327689, 524288, 2, 327690, 458752, 2, 327691, 524288, 2, 327692, 458752, 2, 327693, 524288, 2, 327694, 589824, 2, 393216, 393216, 3, 393230, 524288, 3, 393217, 458752, 3, 393218, 458752, 3, 393219, 458752, 3, 393220, 458752, 3, 393221, 458752, 3, 393222, 458752, 3, 393223, 458752, 3, 393224, 458752, 3, 393225, 458752, 3, 393226, 458752, 3, 393227, 458752, 3, 393228, 458752, 3, 393229, 458752, 3, 458752, 393216, 4, 524288, 393216, 5, 524289, 458752, 5, 524290, 524288, 5, 524291, 458752, 5, 524292, 524288, 5, 524293, 458752, 5, 524294, 524288, 5, 524295, 458752, 5, 524296, 524288, 5, 524297, 458752, 5, 524298, 524288, 5, 524299, 458752, 5, 524300, 458752, 5, 524301, 524288, 5, 524302, 589824, 5, 458766, 589824, 4, 458753, 458752, 4, 458754, 458752, 4, 458755, 458752, 4, 458756, 458752, 4, 458757, 458752, 4, 458758, 458752, 4, 458759, 458752, 4, 458760, 458752, 4, 458761, 458752, 4, 458762, 458752, 4, 458763, 458752, 4, 458764, 458752, 4, 458765, 458752, 4)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.0
+offset_top = 7.0
+offset_right = 1002.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("5_adchd")
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Congratulations! You won Story Mode!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 309.0
+offset_top = 510.0
+offset_right = 872.0
+offset_bottom = 622.0
+theme_override_fonts/font = ExtResource("6_j5cxl")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = ExtResource("7_avxqp")
+theme_override_styles/pressed = ExtResource("8_b3bs5")
+theme_override_styles/hover = ExtResource("9_i0tt5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j5cxl")
+disabled = true
+text = "BACK TO HOME"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_4yny5")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
 [editable path="Player"]
