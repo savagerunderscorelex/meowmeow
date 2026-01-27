@@ -6,7 +6,7 @@ Jump Mittens, Jump! is a 2D platformer game where you play as a cute little cat 
 
 ## Where to Play
 
-This game is available on itch.io. You can play [here](https://alexistreamoon.itch.io/jump-mittens-jump)
+This game is available on itch.io. You can play [here](https://alexistreamoon.itch.io/jump-mittens-jump).
 
 ## Assets and Guides
 
