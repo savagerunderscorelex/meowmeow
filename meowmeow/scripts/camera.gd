@@ -12,10 +12,11 @@ func _process(_delta: float) -> void:
 		moving = true
 	else: 
 		self.position.x += speed
-
+	
 func _on_death_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		get_tree().paused = true
+		body.isDead = true
+		globals.player_died.emit() # 2nd step, emit the signal
 	elif body.name == "Platform":
 		await get_tree().create_timer(3).timeout
 		print("you've been removed")

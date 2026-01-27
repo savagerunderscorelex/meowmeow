@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://blhn32kabocew"]
+[gd_scene load_steps=7 format=3 uid="uid://c2e8gpqivcrsc"]
 
-[ext_resource type="Script" uid="uid://cjrnsmu40p3" path="res://scripts/platform.gd" id="1_ba0x2"]
-[ext_resource type="Texture2D" uid="uid://ela5ml6olgkp" path="res://assets/Free Tileset.png" id="2_nlgqw"]
+[ext_resource type="PackedScene" uid="uid://ds6l7av67yr2i" path="res://scenes/background.tscn" id="1_8e3yi"]
+[ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="2_2hnqr"]
+[ext_resource type="Texture2D" uid="uid://ela5ml6olgkp" path="res://assets/Free Tileset.png" id="3_x4y80"]
+[ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="4_bppjw"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_507ja"]
-texture = ExtResource("2_nlgqw")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htjo0"]
+texture = ExtResource("3_x4y80")
 6:2/0 = 0
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:2/0 = 0
@@ -84,39 +86,32 @@ texture = ExtResource("2_nlgqw")
 14:9/0 = 0
 14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_n1ckp"]
+[sub_resource type="TileSet" id="TileSet_pcmjr"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_507ja")
+sources/0 = SubResource("TileSetAtlasSource_htjo0")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
-size = Vector2(217, 371.5)
+[node name="enter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ba0x2"]
-b = Vector2(1, 335)
+[node name="Background" parent="." instance=ExtResource("1_8e3yi")]
+position = Vector2(534, -87)
 
-[node name="platform" type="StaticBody2D"]
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("1_ba0x2")
+[node name="Player" parent="." instance=ExtResource("2_2hnqr")]
+position = Vector2(-67, 209.00002)
+scale = Vector2(6, 6)
 
-[node name="Platform" type="CharacterBody2D" parent="."]
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4.8419037, 4.990862)
+tile_set = SubResource("TileSet_pcmjr")
+format = 2
+layer_0/tile_data = PackedInt32Array(327680, 393216, 2, 327681, 458752, 2, 327682, 458752, 2, 327683, 524288, 2, 327684, 458752, 2, 327685, 524288, 2, 327686, 458752, 2, 327687, 524288, 2, 327688, 458752, 2, 327689, 524288, 2, 327690, 458752, 2, 327691, 524288, 2, 327692, 458752, 2, 327693, 524288, 2, 327694, 589824, 2, 393216, 393216, 3, 393230, 524288, 3, 393217, 458752, 3, 393218, 458752, 3, 393219, 458752, 3, 393220, 458752, 3, 393221, 458752, 3, 393222, 458752, 3, 393223, 458752, 3, 393224, 458752, 3, 393225, 458752, 3, 393226, 458752, 3, 393227, 458752, 3, 393228, 458752, 3, 393229, 458752, 3, 458752, 393216, 4, 524288, 393216, 5, 524289, 458752, 5, 524290, 524288, 5, 524291, 458752, 5, 524292, 524288, 5, 524293, 458752, 5, 524294, 524288, 5, 524295, 458752, 5, 524296, 524288, 5, 524297, 458752, 5, 524298, 524288, 5, 524299, 458752, 5, 524300, 458752, 5, 524301, 524288, 5, 524302, 589824, 5, 458766, 589824, 4, 458753, 458752, 4, 458754, 458752, 4, 458755, 458752, 4, 458756, 458752, 4, 458757, 458752, 4, 458758, 458752, 4, 458759, 458752, 4, 458760, 458752, 4, 458761, 458752, 4, 458762, 458752, 4, 458763, 458752, 4, 458764, 458752, 4, 458765, 458752, 4)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Platform"]
-scale = Vector2(3.3546894, 2.9141967)
-tile_map_data = PackedByteArray("AAACAAQAAQAGAAIAAAADAAQAAQAHAAIAAAAEAAQAAQAIAAIAAAAFAAQAAQAJAAIAAAACAAUAAQAGAAMAAAADAAUAAQAHAAMAAAAEAAUAAQAIAAMAAAAFAAUAAQAJAAMAAAACAAYAAQAGAAMAAAADAAYAAQAHAAMAAAAEAAYAAQAHAAMAAAAFAAYAAQAJAAMAAAACAAcAAQAGAAMAAAADAAcAAQAHAAMAAAAEAAcAAQAHAAMAAAAFAAcAAQAJAAMAAAACAAgAAQAGAAMAAAADAAgAAQAHAAMAAAAEAAgAAQAHAAMAAAAFAAgAAQAJAAMAAAACAAkAAQAGAAMAAAADAAkAAQAHAAMAAAAEAAkAAQAHAAMAAAAFAAkAAQAJAAMAAAACAAoAAQAGAAMAAAADAAoAAQAHAAMAAAAEAAoAAQAIAAMAAAAFAAoAAQAJAAMAAAACAAsAAQAGAAUAAAADAAsAAQAHAAUAAAAEAAsAAQAIAAUAAAAFAAsAAQAJAAUAAAA=")
-tile_set = SubResource("TileSet_n1ckp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(214.5, 372.25)
-shape = SubResource("RectangleShape2D_nlgqw")
-debug_color = Color(1.9853935e-07, 0.1697118, 0.20469168, 0.41960785)
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-84, -35)
-scale = Vector2(1.0706402, -6.773277)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(143, -71)
-shape = SubResource("SegmentShape2D_ba0x2")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bppjw")
+autoplay = true
+parameters/looping = true

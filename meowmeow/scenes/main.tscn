@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dochlt51xp7s7"]
+[gd_scene load_steps=13 format=3 uid="uid://dochlt51xp7s7"]
 
 [ext_resource type="Script" uid="uid://17nfmn4ujtw3" path="res://scripts/main.gd" id="1_tipki"]
 [ext_resource type="Script" uid="uid://cyw1so6o24r13" path="res://scripts/speed_values.gd" id="2_85g3d"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="5_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cgfk60fyq3y8t" path="res://scenes/camera.tscn" id="6_trceg"]
 [ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="7_a8y0u"]
+[ext_resource type="FontFile" uid="uid://carcq3ngjw5xe" path="res://fonts/Super Pixel Personal Use.ttf" id="8_choun"]
+[ext_resource type="FontFile" uid="uid://b7ibineb56ra8" path="res://fonts/game_over.ttf" id="8_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://blhn32kabocew" path="res://scenes/platform.tscn" id="8_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://ds6l7av67yr2i" path="res://scenes/background.tscn" id="8_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://cfbcal8wfftm4" path="res://scenes/count_down.tscn" id="9_85g3d"]
@@ -21,17 +23,34 @@ metadata/_custom_type_script = "uid://cyw1so6o24r13"
 script = ExtResource("1_tipki")
 speeds = SubResource("Resource_xmgrc")
 
-[node name="Control" parent="." instance=ExtResource("3_choun")]
-
-[node name="Button2" type="Button" parent="Control"]
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="CountDown" parent="." instance=ExtResource("9_85g3d")]
-visible = false
-
 [node name="Background" parent="." instance=ExtResource("8_ya4ey")]
-position = Vector2(-18, 16)
+position = Vector2(-16, 14)
+
+[node name="ScoreLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="ScoreLayer"]
+offset_left = 1010.0
+offset_top = -16.0
+offset_right = 1063.0
+offset_bottom = 120.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_eb6dy")
+theme_override_font_sizes/font_size = 225
+text = "0"
+
+[node name="ScoreLabel" type="Label" parent="ScoreLayer"]
+offset_left = 665.0
+offset_top = 28.0
+offset_right = 944.0
+offset_bottom = 197.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("8_choun")
+theme_override_font_sizes/font_size = 60
+text = "Score:
+"
+
+[node name="Control" parent="." instance=ExtResource("3_choun")]
+visible = false
 
 [node name="camera" parent="." instance=ExtResource("6_trceg")]
 position = Vector2(575, 327)
@@ -43,20 +62,6 @@ scale = Vector2(3, 3)
 [node name="Timer1" type="Timer" parent="."]
 autostart = true
 
-[node name="ScoreLayer" type="CanvasLayer" parent="."]
-
-[node name="Score" type="Label" parent="ScoreLayer"]
-offset_left = 1068.0
-offset_top = 30.0
-offset_right = 1108.0
-offset_bottom = 113.0
-theme_override_font_sizes/font_size = 60
-text = "0"
-
-[node name="ScoreLabel" type="Label" parent="ScoreLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_a8y0u")
 autoplay = true
@@ -64,4 +69,8 @@ autoplay = true
 [node name="platform" parent="." instance=ExtResource("8_jkv2x")]
 position = Vector2(-80, 133)
 
+[node name="CountDown" parent="." instance=ExtResource("9_85g3d")]
+
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
+
+[editable path="Control"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="meowmeow"
-run/main_scene="uid://dochlt51xp7s7"
+run/main_scene="uid://bg7q26f34yww8"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
@@ -22,7 +22,7 @@ globals="*res://scenes/globals.tscn"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_width"
 
 [editor_plugins]
 

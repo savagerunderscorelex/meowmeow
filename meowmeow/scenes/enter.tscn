@@ -1,4 +1,157 @@
-[gd_scene format=3 uid="uid://bg7q26f34yww8"]
+[gd_scene load_steps=22 format=3 uid="uid://bg7q26f34yww8"]
+
+[ext_resource type="PackedScene" uid="uid://ds6l7av67yr2i" path="res://scenes/background.tscn" id="1_2dqrm"]
+[ext_resource type="Script" uid="uid://lh8dc5bafj5y" path="res://scripts/enter.gd" id="1_3ycq1"]
+[ext_resource type="Texture2D" uid="uid://ela5ml6olgkp" path="res://assets/Free Tileset.png" id="1_kiq4n"]
+[ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="2_2dqrm"]
+[ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="4_bmkq5"]
+[ext_resource type="FontFile" uid="uid://carcq3ngjw5xe" path="res://fonts/Super Pixel Personal Use.ttf" id="5_fwd0c"]
+[ext_resource type="FontFile" uid="uid://1g5vimqiitpr" path="res://fonts/Pixelmania.ttf" id="6_tr22a"]
+[ext_resource type="StyleBox" uid="uid://chud2lgqgl487" path="res://enter.tres" id="7_n4p4n"]
+[ext_resource type="StyleBox" uid="uid://x5v1m8kfltrf" path="res://enter-pressed.tres" id="8_3ycq1"]
+[ext_resource type="StyleBox" uid="uid://cix4ogcoy06sk" path="res://enter-hovered.tres" id="9_qfqkf"]
+[ext_resource type="FontFile" uid="uid://dotx52c5a1irm" path="res://fonts/Skynight.otf" id="11_qfqkf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfqkf"]
+texture = ExtResource("1_kiq4n")
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:2/0 = 0
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:4/0 = 0
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:5/0 = 0
+13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:7/0 = 0
+12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:7/0 = 0
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:8/0 = 0
+9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:8/0 = 0
+10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:8/0 = 0
+12:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:8/0 = 0
+14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:9/0 = 0
+12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:9/0 = 0
+13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:9/0 = 0
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_fwd0c"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qfqkf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfqkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yo44y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ycq1"]
+bg_color = Color(0.5495142, 0.5821472, 0.81125134, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ycq1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yo44y"]
+bg_color = Color(0.54901963, 0.5803922, 0.8117647, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 9
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gw81"]
+bg_color = Color(0.24758443, 0.26624942, 0.46868217, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfqkf"]
+bg_color = Color(0.35332406, 0.37856224, 0.62704974, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 9
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2w3q"]
 
 [node name="enter" type="Control"]
 layout_mode = 3
@@ -7,9 +160,265 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3ycq1")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background" parent="." instance=ExtResource("1_2dqrm")]
+position = Vector2(534, -87)
+
+[node name="Player" parent="." instance=ExtResource("2_2dqrm")]
+position = Vector2(-67, 209.00002)
+scale = Vector2(6, 6)
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4.8419037, 4.990862)
+tile_set = SubResource("TileSet_fwd0c")
+format = 2
+layer_0/tile_data = PackedInt32Array(327680, 393216, 2, 327681, 458752, 2, 327682, 458752, 2, 327683, 524288, 2, 327684, 458752, 2, 327685, 524288, 2, 327686, 458752, 2, 327687, 524288, 2, 327688, 458752, 2, 327689, 524288, 2, 327690, 458752, 2, 327691, 524288, 2, 327692, 458752, 2, 327693, 524288, 2, 327694, 589824, 2, 393216, 393216, 3, 393230, 524288, 3, 393217, 458752, 3, 393218, 458752, 3, 393219, 458752, 3, 393220, 458752, 3, 393221, 458752, 3, 393222, 458752, 3, 393223, 458752, 3, 393224, 458752, 3, 393225, 458752, 3, 393226, 458752, 3, 393227, 458752, 3, 393228, 458752, 3, 393229, 458752, 3, 458752, 393216, 4, 524288, 393216, 5, 524289, 458752, 5, 524290, 524288, 5, 524291, 458752, 5, 524292, 524288, 5, 524293, 458752, 5, 524294, 524288, 5, 524295, 458752, 5, 524296, 524288, 5, 524297, 458752, 5, 524298, 524288, 5, 524299, 458752, 5, 524300, 458752, 5, 524301, 524288, 5, 524302, 589824, 5, 458766, 589824, 4, 458753, 458752, 4, 458754, 458752, 4, 458755, 458752, 4, 458756, 458752, 4, 458757, 458752, 4, 458758, 458752, 4, 458759, 458752, 4, 458760, 458752, 4, 458761, 458752, 4, 458762, 458752, 4, 458763, 458752, 4, 458764, 458752, 4, 458765, 458752, 4)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bmkq5")
 autoplay = true
+parameters/looping = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 154.0
+offset_top = -74.0
+offset_right = 1226.0
+offset_bottom = 310.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("5_fwd0c")
+theme_override_font_sizes/normal_font_size = 60
+text = "JUMP MITTENS! JUMP!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 250.0
+offset_right = 1114.0
+offset_bottom = 341.0
+theme_override_fonts/font = ExtResource("6_tr22a")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = ExtResource("7_n4p4n")
+theme_override_styles/pressed = ExtResource("8_3ycq1")
+theme_override_styles/hover = ExtResource("9_qfqkf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qfqkf")
+text = "PLAY"
+
+[node name="HowToPlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9661458
+anchor_top = 0.6157407
+anchor_right = 0.9661458
+anchor_bottom = 0.6157407
+offset_left = -473.0
+offset_top = -48.99997
+offset_right = 3.0
+offset_bottom = 49.00003
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_tr22a")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = ExtResource("7_n4p4n")
+theme_override_styles/pressed = ExtResource("8_3ycq1")
+theme_override_styles/hover = ExtResource("9_qfqkf")
+text = "HOW TO PLAY"
+
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 468.0
+offset_right = 1113.0
+offset_bottom = 567.0
+theme_override_fonts/font = ExtResource("6_tr22a")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = ExtResource("7_n4p4n")
+theme_override_styles/pressed = ExtResource("8_3ycq1")
+theme_override_styles/hover = ExtResource("9_qfqkf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yo44y")
+text = "OPTIONS"
+
+[node name="OptionsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -553.75
+offset_top = -283.0
+offset_right = 553.75
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ycq1")
+
+[node name="Label" type="Label" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.90503
+offset_top = -10.0
+offset_right = 60.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("5_fwd0c")
+theme_override_font_sizes/font_size = 60
+text = "Music:"
+
+[node name="CheckButton" type="CheckButton" parent="OptionsPanel/Label"]
+layout_mode = 0
+offset_left = 282.0
+offset_top = -22.0
+offset_right = 326.0
+offset_bottom = 14.0
+scale = Vector2(2.9269109, 3.0303514)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3ycq1")
+action_mode = 0
+
+[node name="PanelTitle" type="Label" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -229.5
+offset_right = 255.5
+offset_bottom = -138.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_fwd0c")
+theme_override_font_sizes/font_size = 90
+text = "OPTIONS"
+
+[node name="Button" type="Button" parent="OptionsPanel"]
+layout_mode = 0
+offset_left = 1012.75
+offset_top = 29.0
+offset_right = 1074.75
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("5_fwd0c")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yo44y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gw81")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qfqkf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y2w3q")
+text = "x"
+
+[node name="Label2" type="Label" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -506.90503
+offset_top = 80.0
+offset_right = 580.0
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("5_fwd0c")
+theme_override_font_sizes/font_size = 35
+text = "Game by laysha (itch.io)
+or savagerunderscorelex 
+(Github)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="How2Play" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -553.75
+offset_top = -283.0
+offset_right = 553.75
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ycq1")
+
+[node name="Label" type="RichTextLabel" parent="How2Play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.90503
+offset_top = -107.0
+offset_right = 502.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("11_qfqkf")
+theme_override_font_sizes/normal_font_size = 34
+text = "You can use W, A, and D or Up, Left, and Right Arrow Keys (jump, left, and right respectively).
+
+Mittens has the ability to double jump! You can jump twice before gravity gets the best of you.
+
+Story mode requires you to get a score of 75. However for endless mode, it is, well, endless. "
+fit_content = true
+scroll_active = false
+tab_size = 7
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelTitle" type="Label" parent="How2Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -229.5
+offset_right = 255.5
+offset_bottom = -138.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_fwd0c")
+theme_override_font_sizes/font_size = 90
+text = "HOW TO PLAY"
+
+[node name="HowButton" type="Button" parent="How2Play"]
+layout_mode = 0
+offset_left = 1012.75
+offset_top = 29.0
+offset_right = 1074.75
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("5_fwd0c")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yo44y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gw81")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qfqkf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y2w3q")
+text = "x"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="toggled" from="OptionsPanel/Label/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="OptionsPanel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="How2Play/HowButton" to="." method="_on_how_button_pressed"]

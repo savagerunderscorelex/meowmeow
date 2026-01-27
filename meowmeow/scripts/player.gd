@@ -6,10 +6,11 @@ var speed: int = 200
 var jumpSpeed: int = -speed * 2
 var gravity: int = speed * 3
 var jumps: int = 2
+var isDead: bool = false
 
 # Process
 func _physics_process(delta: float) -> void:
-	if globals.is_countdown_finished:
+	if globals.isCountdownFinished:
 		# I think that this is a better way of coding platformer movement with GDScript
 		# The tutorial I used to first learn made me put character flipping and horizontal movement logic within
 		# the same function, which made it way harder to code and look right.
@@ -17,6 +18,8 @@ func _physics_process(delta: float) -> void:
 		update_animation() # change the animation ONLY
 		update_flipping() # change the flipping ONLY
 		update_movement(delta) # change the actual movement of the player character ONLY
+	elif get_parent().name == "enter":
+		enter_screen_animation()
 	move_and_slide()
 	
 func update_animation(): # updates player animation
@@ -52,6 +55,3 @@ func update_movement(delta: float) -> void: # Force of gravity
 
 func enter_screen_animation():
 	animator.play("idle")
-	await get_tree().create_timer(5).timeout
-	animator.play("idle_background")
-	await get_tree().create_timer(5).timeout

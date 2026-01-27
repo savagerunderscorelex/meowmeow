@@ -21,7 +21,7 @@ texture = ExtResource("1_wisxt")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.45, 1)
-repeat_size = Vector2(1900, 0)
+repeat_size = Vector2(1899, 0)
 repeat_times = 3
 
 [node name="ForestMountain" type="Sprite2D" parent="Parallax2D2"]

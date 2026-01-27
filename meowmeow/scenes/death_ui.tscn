@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcgp7sie67b0t"]
+[gd_scene load_steps=9 format=3 uid="uid://dcgp7sie67b0t"]
 
 [ext_resource type="Script" uid="uid://voi2v63jl5em" path="res://scripts/death_ui.gd" id="1_5p55f"]
 [ext_resource type="FontFile" uid="uid://dotx52c5a1irm" path="res://fonts/Skynight.otf" id="2_x4jx1"]
@@ -44,10 +44,26 @@ expand_margin_right = 9.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dubc"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x145r"]
+
 [node name="DeathUI" type="CanvasLayer"]
 process_mode = 3
-visible = false
 script = ExtResource("1_5p55f")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1158.0
+offset_bottom = 651.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 351.0
+offset_top = 86.0
+offset_right = 818.0
+offset_bottom = 239.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("2_x4jx1")
+theme_override_font_sizes/normal_font_size = 100
+text = "You Died! "
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 8
@@ -73,18 +89,69 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_gdt2y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wm3ai")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x4jx1")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8dubc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x145r")
 disabled = true
 text = "Restart"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 351.0
-offset_top = 135.0
-offset_right = 818.0
-offset_bottom = 288.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+[node name="HighScoreLabelEndless" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -27.5
+offset_right = 272.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("2_x4jx1")
-theme_override_font_sizes/normal_font_size = 100
-text = "You Died! "
+theme_override_font_sizes/normal_font_size = 45
+text = "High Score (Endless):"
+
+[node name="HighScoreEndless" type="RichTextLabel" parent="HighScoreLabelEndless"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 2.0
+offset_right = 824.0
+offset_bottom = 49.0
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("2_x4jx1")
+theme_override_font_sizes/normal_font_size = 45
+text = "0"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -106.0
+offset_right = 123.5
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("2_x4jx1")
+theme_override_font_sizes/normal_font_size = 45
+text = "Score:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Score" type="RichTextLabel" parent="ScoreLabel"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 3.0
+offset_right = 262.0
+offset_bottom = 57.0
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("2_x4jx1")
+theme_override_font_sizes/normal_font_size = 45
+text = "0"
+scroll_active = false
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
