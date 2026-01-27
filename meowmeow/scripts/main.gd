@@ -61,6 +61,7 @@ func check_score():
 			speeds.cameraSpeed = 5.5
 		75:
 			get_tree().call_deferred("change_scene_to_file", "res://scenes/congratulations.tscn")
+			globals.storyCompletionTimes += 1
 
 func _on_timer_timeout() -> void:
 	var groundsInstance = grounds.instantiate() # Creates new instance of the platforms

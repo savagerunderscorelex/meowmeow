@@ -11,7 +11,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		enter += 1
 		if enter == 1: # Prevents extra points from being added if the player reenters the area
 			print("first entrance, one point added")
-			globals.score += 15
+			globals.score += 1
 		else:
 			print("you've already entered")
 	

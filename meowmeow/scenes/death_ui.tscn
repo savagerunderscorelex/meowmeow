@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcgp7sie67b0t"]
+[gd_scene format=3 uid="uid://dcgp7sie67b0t"]
 
 [ext_resource type="Script" uid="uid://voi2v63jl5em" path="res://scripts/death_ui.gd" id="1_5p55f"]
 [ext_resource type="FontFile" uid="uid://dotx52c5a1irm" path="res://fonts/Skynight.otf" id="2_x4jx1"]
@@ -46,15 +46,15 @@ expand_margin_right = 9.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x145r"]
 
-[node name="DeathUI" type="CanvasLayer"]
+[node name="DeathUI" type="CanvasLayer" unique_id=72502474]
 process_mode = 3
 script = ExtResource("1_5p55f")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=62569606]
 offset_right = 1158.0
 offset_bottom = 651.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1781666378]
 offset_left = 351.0
 offset_top = 86.0
 offset_right = 818.0
@@ -65,7 +65,7 @@ theme_override_fonts/normal_font = ExtResource("2_x4jx1")
 theme_override_font_sizes/normal_font_size = 100
 text = "You Died! "
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1492971040]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -93,7 +93,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_x145r")
 disabled = true
 text = "Restart"
 
-[node name="HighScoreLabelEndless" type="RichTextLabel" parent="."]
+[node name="HighScoreLabelEndless" type="RichTextLabel" parent="." unique_id=1723551668]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -110,7 +110,7 @@ theme_override_fonts/normal_font = ExtResource("2_x4jx1")
 theme_override_font_sizes/normal_font_size = 45
 text = "High Score (Endless):"
 
-[node name="HighScoreEndless" type="RichTextLabel" parent="HighScoreLabelEndless"]
+[node name="HighScoreEndless" type="RichTextLabel" parent="HighScoreLabelEndless" unique_id=2088671318]
 layout_mode = 0
 offset_left = 431.0
 offset_top = 2.0
@@ -123,7 +123,7 @@ text = "0"
 scroll_active = false
 autowrap_mode = 0
 
-[node name="ScoreLabel" type="RichTextLabel" parent="."]
+[node name="ScoreLabel" type="RichTextLabel" parent="." unique_id=1648245068]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -142,12 +142,42 @@ text = "Score:"
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Score" type="RichTextLabel" parent="ScoreLabel"]
+[node name="Score" type="RichTextLabel" parent="ScoreLabel" unique_id=712721160]
 layout_mode = 0
 offset_left = 135.0
 offset_top = 3.0
 offset_right = 262.0
 offset_bottom = 57.0
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("2_x4jx1")
+theme_override_font_sizes/normal_font_size = 45
+text = "0"
+scroll_active = false
+
+[node name="CompletionsLabel" type="RichTextLabel" parent="." unique_id=2005984760]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -334.0
+offset_top = 55.0
+offset_right = 167.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("2_x4jx1")
+theme_override_font_sizes/normal_font_size = 45
+text = "Story Mode Completions:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Completions" type="RichTextLabel" parent="." unique_id=586328736]
+offset_left = 749.0
+offset_top = 377.0
+offset_right = 876.0
+offset_bottom = 431.0
 theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("2_x4jx1")
 theme_override_font_sizes/normal_font_size = 45

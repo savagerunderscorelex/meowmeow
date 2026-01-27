@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://blhn32kabocew"]
+[gd_scene format=4 uid="uid://blhn32kabocew"]
 
 [ext_resource type="Script" uid="uid://cjrnsmu40p3" path="res://scripts/platform.gd" id="1_ba0x2"]
 [ext_resource type="Texture2D" uid="uid://ela5ml6olgkp" path="res://assets/Free Tileset.png" id="2_nlgqw"]
@@ -94,29 +94,29 @@ size = Vector2(217, 371.5)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ba0x2"]
 b = Vector2(1, 335)
 
-[node name="platform" type="StaticBody2D"]
+[node name="platform" type="StaticBody2D" unique_id=2137096428]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ba0x2")
 
-[node name="Platform" type="CharacterBody2D" parent="."]
+[node name="Platform" type="CharacterBody2D" parent="." unique_id=2049721042]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Platform"]
+[node name="TileMapLayer" type="TileMapLayer" parent="Platform" unique_id=490004092]
 texture_filter = 1
 scale = Vector2(3.3546894, 2.9141967)
 tile_map_data = PackedByteArray("AAACAAQAAQAGAAIAAAADAAQAAQAHAAIAAAAEAAQAAQAIAAIAAAAFAAQAAQAJAAIAAAACAAUAAQAGAAMAAAADAAUAAQAHAAMAAAAEAAUAAQAIAAMAAAAFAAUAAQAJAAMAAAACAAYAAQAGAAMAAAADAAYAAQAHAAMAAAAEAAYAAQAHAAMAAAAFAAYAAQAJAAMAAAACAAcAAQAGAAMAAAADAAcAAQAHAAMAAAAEAAcAAQAHAAMAAAAFAAcAAQAJAAMAAAACAAgAAQAGAAMAAAADAAgAAQAHAAMAAAAEAAgAAQAHAAMAAAAFAAgAAQAJAAMAAAACAAkAAQAGAAMAAAADAAkAAQAHAAMAAAAEAAkAAQAHAAMAAAAFAAkAAQAJAAMAAAACAAoAAQAGAAMAAAADAAoAAQAHAAMAAAAEAAoAAQAIAAMAAAAFAAoAAQAJAAMAAAACAAsAAQAGAAUAAAADAAsAAQAHAAUAAAAEAAsAAQAIAAUAAAAFAAsAAQAJAAUAAAA=")
 tile_set = SubResource("TileSet_n1ckp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1789453936]
 position = Vector2(214.5, 372.25)
 shape = SubResource("RectangleShape2D_nlgqw")
 debug_color = Color(1.9853935e-07, 0.1697118, 0.20469168, 0.41960785)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=525929608]
 position = Vector2(-84, -35)
 scale = Vector2(1.0706402, -6.773277)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=59445227]
 position = Vector2(143, -71)
 shape = SubResource("SegmentShape2D_ba0x2")
 

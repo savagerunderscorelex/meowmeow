@@ -24,7 +24,7 @@ script = ExtResource("1_tipki")
 speeds = SubResource("Resource_xmgrc")
 
 [node name="Background" parent="." unique_id=557172984 instance=ExtResource("8_ya4ey")]
-position = Vector2(-16, 14)
+position = Vector2(-16, 13)
 
 [node name="Player" parent="." unique_id=120792118 instance=ExtResource("5_eb6dy")]
 scale = Vector2(3, 3)
@@ -70,7 +70,6 @@ parameters/looping = true
 position = Vector2(-113, 125)
 
 [node name="CountDown" parent="." unique_id=85468435 instance=ExtResource("9_85g3d")]
-visible = false
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
 

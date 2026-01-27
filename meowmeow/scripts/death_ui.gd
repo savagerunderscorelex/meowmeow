@@ -3,6 +3,7 @@ extends CanvasLayer
 func _process(_delta: float) -> void:
 	$HighScoreLabelEndless/HighScoreEndless.text = "%s" %[str(globals.highScoreEndless)]
 	$ScoreLabel/Score.text = "%s" %[str(globals.score)]
+	$Completions.text = "%s" %[str(globals.storyCompletionTimes)]
 	if get_tree().paused == true:
 		self.visible = true
 		$Button.disabled = false

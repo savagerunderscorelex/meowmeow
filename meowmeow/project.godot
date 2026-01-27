@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="meowmeow"
 run/main_scene="uid://bg7q26f34yww8"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://y3nylpk2g34y"
 
 [autoload]
 
