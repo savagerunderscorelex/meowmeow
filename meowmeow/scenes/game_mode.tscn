@@ -1,0 +1,156 @@
+[gd_scene load_steps=13 format=3 uid="uid://c2e8gpqivcrsc"]
+
+[ext_resource type="Script" uid="uid://dp42mqkykceul" path="res://scripts/game_mode.gd" id="1_xxbxh"]
+[ext_resource type="PackedScene" uid="uid://ds6l7av67yr2i" path="res://scenes/background.tscn" id="2_q6kyt"]
+[ext_resource type="PackedScene" uid="uid://bggv7a5qjig37" path="res://scenes/player.tscn" id="3_j6h28"]
+[ext_resource type="Texture2D" uid="uid://ela5ml6olgkp" path="res://assets/Free Tileset.png" id="4_aykhf"]
+[ext_resource type="AudioStream" uid="uid://dbsxu66xkbgmr" path="res://sfx_and_music/sillymusic.mp3" id="5_s34oo"]
+[ext_resource type="FontFile" uid="uid://1g5vimqiitpr" path="res://fonts/Pixelmania.ttf" id="6_i3qmp"]
+[ext_resource type="StyleBox" uid="uid://chud2lgqgl487" path="res://enter.tres" id="7_f0ihv"]
+[ext_resource type="StyleBox" uid="uid://x5v1m8kfltrf" path="res://enter-pressed.tres" id="8_u4gjl"]
+[ext_resource type="StyleBox" uid="uid://cix4ogcoy06sk" path="res://enter-hovered.tres" id="9_iuhtk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htjo0"]
+texture = ExtResource("4_aykhf")
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:2/0 = 0
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:4/0 = 0
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:5/0 = 0
+13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:7/0 = 0
+12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:7/0 = 0
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:8/0 = 0
+9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:8/0 = 0
+10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:8/0 = 0
+12:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:8/0 = 0
+14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:9/0 = 0
+12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:9/0 = 0
+13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:9/0 = 0
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_pcmjr"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_htjo0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_11ukb"]
+
+[node name="GameMode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xxbxh")
+
+[node name="Background" parent="." instance=ExtResource("2_q6kyt")]
+position = Vector2(534, -87)
+
+[node name="Player" parent="." instance=ExtResource("3_j6h28")]
+position = Vector2(-67, 209.00002)
+scale = Vector2(6, 6)
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4.8419037, 4.990862)
+tile_set = SubResource("TileSet_pcmjr")
+format = 2
+layer_0/tile_data = PackedInt32Array(327680, 393216, 2, 327681, 458752, 2, 327682, 458752, 2, 327683, 524288, 2, 327684, 458752, 2, 327685, 524288, 2, 327686, 458752, 2, 327687, 524288, 2, 327688, 458752, 2, 327689, 524288, 2, 327690, 458752, 2, 327691, 524288, 2, 327692, 458752, 2, 327693, 524288, 2, 327694, 589824, 2, 393216, 393216, 3, 393230, 524288, 3, 393217, 458752, 3, 393218, 458752, 3, 393219, 458752, 3, 393220, 458752, 3, 393221, 458752, 3, 393222, 458752, 3, 393223, 458752, 3, 393224, 458752, 3, 393225, 458752, 3, 393226, 458752, 3, 393227, 458752, 3, 393228, 458752, 3, 393229, 458752, 3, 458752, 393216, 4, 524288, 393216, 5, 524289, 458752, 5, 524290, 524288, 5, 524291, 458752, 5, 524292, 524288, 5, 524293, 458752, 5, 524294, 524288, 5, 524295, 458752, 5, 524296, 524288, 5, 524297, 458752, 5, 524298, 524288, 5, 524299, 458752, 5, 524300, 458752, 5, 524301, 524288, 5, 524302, 589824, 5, 458766, 589824, 4, 458753, 458752, 4, 458754, 458752, 4, 458755, 458752, 4, 458756, 458752, 4, 458757, 458752, 4, 458758, 458752, 4, 458759, 458752, 4, 458760, 458752, 4, 458761, 458752, 4, 458762, 458752, 4, 458763, 458752, 4, 458764, 458752, 4, 458765, 458752, 4)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_s34oo")
+autoplay = true
+parameters/looping = true
+
+[node name="EndlessButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 142.0
+offset_right = 1099.0
+offset_bottom = 233.0
+theme_override_fonts/font = ExtResource("6_i3qmp")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = ExtResource("7_f0ihv")
+theme_override_styles/pressed = ExtResource("8_u4gjl")
+theme_override_styles/hover = ExtResource("9_iuhtk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_11ukb")
+text = "ENDLESS"
+
+[node name="Story Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 254.0
+offset_right = 1099.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("6_i3qmp")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = ExtResource("7_f0ihv")
+theme_override_styles/pressed = ExtResource("8_u4gjl")
+theme_override_styles/hover = ExtResource("9_iuhtk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_11ukb")
+text = "STORY"
+
+[connection signal="pressed" from="EndlessButton" to="." method="_on_endless_button_pressed"]
+[connection signal="pressed" from="Story Button" to="." method="_on_story_button_pressed"]

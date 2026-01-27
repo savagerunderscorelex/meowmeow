@@ -15,6 +15,7 @@ var backgroundInstance: int
 # ----------------------------------
 
 func _ready() -> void:
+	$AudioStreamPlayer.playing = globals.isMusicOn
 	$AudioStreamPlayer.stream.loop = true
 	globals.player_died.connect(on_player_death) # Third step, connect the signal to a function (the parameter in the parentheses is the name of the function defined at the bottom of the script
 	reset_stats()
@@ -23,9 +24,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if globals.isCountdownFinished:
 		$ScoreLayer.visible = true
-		
-	
-	$AudioStreamPlayer.playing = globals.isMusicOn
 	update_all_scores()
 	check_score()
 	update_speeds()
@@ -84,7 +82,8 @@ func on_player_death(): # Fourth step, define the function that will run once th
 	if $Player.isDead == true:
 		match globals.gameMode:
 			1:
-				pass
+				if globals.score == 75:
+					pass # go to congrats scene
 			2:
 				if globals.score > globals.highScoreEndless:
 					globals.highScoreEndless = globals.score

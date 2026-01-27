@@ -1,11 +1,12 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$AudioStreamPlayer.playing = globals.isMusicOn
 
+func _on_endless_button_pressed() -> void:
+	globals.gameMode = 2
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/main.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_story_button_pressed() -> void:
+	globals.gameMode = 1
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/main.tscn")

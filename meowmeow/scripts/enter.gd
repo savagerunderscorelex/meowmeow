@@ -10,7 +10,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_play_button_pressed() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/main.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/game_mode.tscn")
 
 func _on_how_to_play_button_pressed() -> void:
 	how2play.visible = true

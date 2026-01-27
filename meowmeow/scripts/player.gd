@@ -18,9 +18,13 @@ func _physics_process(delta: float) -> void:
 		update_animation() # change the animation ONLY
 		update_flipping() # change the flipping ONLY
 		update_movement(delta) # change the actual movement of the player character ONLY
-	elif get_parent().name == "enter":
+	elif get_parent().name == "congrats":
+		congrats()
+	elif get_parent().name == "enter" or "GameMode":
 		enter_screen_animation()
+	
 	move_and_slide()
+	
 	
 func update_animation(): # updates player animation
 	# The first condition checks if the player is on the floor to prevent the walking and idle animations
@@ -55,3 +59,6 @@ func update_movement(delta: float) -> void: # Force of gravity
 
 func enter_screen_animation():
 	animator.play("idle")
+	
+func congrats():
+	$AnimationPlayer.play("celebrate")
