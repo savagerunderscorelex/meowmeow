@@ -1,8 +1,8 @@
-# Jump Mittens, Jump!
+# Jump, Mittens! Jump!
 
 ## About
 
-Jump Mittens, Jump! is a 2D platformer game where you play as a cute little cat named Mittens. Help Mittens jump over cliffs and to avoid the gaps, which will lead to certain death! There are two game modes: Story and Endless.
+Jump, Mittens! Jump! is a 2D platformer game where you play as a cute little cat named Mittens. Help Mittens jump over cliffs and to avoid the gaps, which will lead to certain death! There are two game modes: Story and Endless.
 
 ![Demo Image](demo-image.png)
 
